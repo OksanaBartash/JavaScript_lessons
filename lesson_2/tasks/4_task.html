@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_2</title>
+
+	<script src="./src/js/script.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<h1>Задача #4</h1>
+		<p>
+			Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+		</p>
+	</div>
+
+	<script>
+		const numberСentimeters = parseFloat(prompt(`Введіть кількість сантиметрів:`, `0`))
+
+		const centimetersToMeters = numberСentimeters / 100
+		const centimetersToKilometers = numberСentimeters / 1000
+
+		document.write(`
+			Дано сантиметри: ${numberСentimeters} см. <br> 
+			Метри: ${centimetersToMeters} м. <br> 
+			Кілометри: ${centimetersToKilometers} км. 
+		`)
+	</script>
+</body>
+
+</html>

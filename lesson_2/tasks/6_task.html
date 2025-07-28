@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_2</title>
+
+	<script src="./src/js/script.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<h1>Задача #6</h1>
+		<p>
+			З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. <br> Обчислити вартість кожного
+			товару окремо та загальну вартість. <br> Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+		</p>
+	</div>
+
+	<script>
+		const quantityProduct_1 = parseInt(prompt(`Введіть кількість товару #1:`, `0`))
+		const varietyProduct_1 = parseFloat(prompt(`Введіть вартість одиницi товару #1:`, `0`))
+
+		const quantityProduct_2 = parseInt(prompt(`Введіть кількість товару #2:`, `0`))
+		const varietyProduct_2 = parseFloat(prompt(`Введіть вартість одиницi товару #2:`, `0`))
+
+		const quantityProduct_3 = parseInt(prompt(`Введіть кількість товару #3:`, `0`))
+		const varietyProduct_3 = parseFloat(prompt(`Введіть вартість одиницi товару #3:`, `0`))
+
+
+		const costProduct_1 = quantityProduct_1 * varietyProduct_1
+		const costProduct_2 = quantityProduct_2 * varietyProduct_2
+		const costProduct_3 = quantityProduct_3 * varietyProduct_3
+		const totalCost = costProduct_1 + costProduct_2 + costProduct_3
+
+		document.write(`
+		<div class="check">
+			<h3>М-н "Весела бджілка"!</h3>
+			<p>Україна, Місто Вінниця</p>
+			<p>************************</p>
+			<h2>ЧЕК №_0001</h2>
+			<div>
+				<ul>
+					<li>Товар №1 - ${quantityProduct_1} X ${varietyProduct_1}грн <strong>${costProduct_1} грн </strong>
+					</li>
+					<li>Товар №2 - ${quantityProduct_2} X ${varietyProduct_2}грн <strong>${costProduct_2} грн </strong>
+					</li>
+					<li>Товар №3 - ${quantityProduct_3} X ${varietyProduct_3}грн <strong>${costProduct_3} грн </ </ul>
+			</div>
+			<br>
+			<p>************************</p>
+			<h6>РАЗОМ -
+				${quantityProduct_1 + quantityProduct_2 + quantityProduct_3} шт
+				СУМА:
+				${totalCost} грн
+			</h6>
+			<p> Дякуємо за покупку!</p>
+		</div>
+		`)
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_2</title>
+
+	<script src="./src/js/script.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<h1>Задача #5</h1>
+		<p>
+			Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин.
+		</p>
+	</div>
+
+	<script>
+		const numberSeconds = parseInt(prompt(`Введіть кількість секунд, що пройшла від початку доби:`, `0`))
+
+		const numberMinutes = numberSeconds / 60
+		const numberHours = numberSeconds / (60 * 60)
+
+		document.write(`
+			Дано кількість секунд: ${numberSeconds} сек. <br> 
+			Хвилини: ${numberMinutes} хв. <br> 
+			Години: ${numberHours} год. 
+		`)
+	</script>
+</body>
+
+</html>
