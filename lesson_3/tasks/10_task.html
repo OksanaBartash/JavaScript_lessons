@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_3</title>
+</head>
+
+<body>
+	<main>
+		<div class="page">
+			<h1>Задача #10 </h1>
+			<p>
+				Комп’ютер загадує число від 1 до 10. Двоє користувачів надають свої відповіді. Виграє той, у кого число
+				знаходиться ближче до загаданого комп’ютером числа.
+			</p>
+		</div>
+	</main>
+
+
+	<script>
+		const min = 1
+		const max = 10
+
+		const computerNumber = Math.floor(min + Math.random() * (max - min) + 1)
+		document.write(`Комп’ютер випадковим чином обрав число "computerNumber" - ${computerNumber} <br>`)
+
+		const numberUser_1 = parseInt(prompt(`Введіть число в діапазоні від 1 до 10`))
+		const numberUser_2 = parseInt(prompt(`Введіть число в діапазоні від 1 до 10`))
+		document.write(`Число гравця №1 "numberUser_1" - ${numberUser_1} <br>`)
+		document.write(`Число гравця №2 "numberUser_2" - ${numberUser_2} <br>`)
+
+		const a = Math.abs(computerNumber - numberUser_1)
+		const b = Math.abs(computerNumber - numberUser_2)
+
+		if (a != b) {
+			const winner = Math.min(a, b)
+			if (winner == a) {
+				document.write(`Переможець гравець №1`)
+			} else {
+				document.write(`Переможець гравець №2`)
+			}
+			
+		} else {
+			document.write(`Перемогла Дружба! `)
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_3</title>
+</head>
+
+<body>
+	<main>
+		<div class="page">
+			<h1>Задача #9 </h1>
+			<p>
+				Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок повинен знаходитися в межах від 1
+				до 100). Користувач вводить число і виграє, якщо число знаходиться у цьому проміжку, або розташоване від
+				нього (від лівого або правого краю) не більше ніж на 10.
+			</p>
+		</div>
+	</main>
+
+
+	<script>
+		const min = 1
+		const max = 100
+		const a = Math.floor(min + Math.random() * (max - min) + 1)
+		const b = Math.floor(min + Math.random() * (max - min) + 1)
+		document.write(`Комп’ютер випадковим чином вибирає "a" - ${a} <br>`)
+		document.write(`Комп’ютер випадковим чином вибирає "b" - ${b}  <br>`)
+
+		const startInterval = (Math.min(a, b) + 10)
+		const endInterval = (Math.max(a, b) + 10)
+		document.write(`a + 10 = startInterval - ${startInterval}  <br>`)
+		document.write(`b + 10 = endInterval - ${endInterval} <br>`)
+
+		const numberUser = parseInt(prompt(`Введіть номер (1-100)`, '72'))
+
+		if (numberUser >= startInterval && numberUser <= endInterval) {
+			document.write(`Вітаю, ви виграли!!!<br> Ваш номер '${numberUser}' попав в виграшний інтервал з '${startInterval}' по '${endInterval}'`)
+		} else {
+			document.write(`Нажаль ви не вгадали, номер '${numberUser}' не попав в діапазон для пошуку: з '${startInterval}' по '${endInterval}'`)
+		}
+
+	</script>
+</body>
+
+</html>

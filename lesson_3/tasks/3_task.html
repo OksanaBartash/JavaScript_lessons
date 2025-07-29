@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_3</title>
+</head>
+
+<body>
+	<main>
+		<div class="page">
+			<h1>Задача #3 </h1>
+			<p>
+				Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+			</p>
+		</div>
+	</main>
+
+
+	<script>
+		const min = 1
+		const max = 5
+		const number = Math.floor(min + Math.random() * (max - min) + 1)
+
+		console.log(`Випадкове число: ${number}`)
+
+		if (number < 3) {
+			console.log(`число < 3`)
+			if (number < 2 ) {
+				console.log(`число = 1`)
+			} else console.log(`число = 2`)
+		} 
+		else if (number > 3) {
+			console.log(`число > 3`)
+			if (number > 4) {
+				console.log(`число = 5`)
+			} else console.log(`число = 4`)
+		} else {
+			console.log(`число = 3`)
+		}
+	</script>
+</body>
+
+</html>

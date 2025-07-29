@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_3</title>
+	<style>
+		.image {
+			max-width: 100px;
+			aspect-ratio: 1;
+		}
+
+		.image img {
+			width: 100%;
+			object-fit: cover;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="page">
+			<h1>Задача #8 </h1>
+			<p>
+				На екран виводиться меню:
+			</p>
+			<ol>
+				<li>Веселий</li>
+				<li>Сумний</li>
+				<li>Обурений</li>
+			</ol>
+			<p>
+				Користувач вводить номер пункту меню і на екрані з’являється відповідне зображення смайла.
+			</p>
+
+			<div class="image"></div>
+		</div>
+	</main>
+
+
+	<script>
+		const numberMenu = parseInt(prompt(`Введіть номер меню (1-3)`, '1'))
+		let whereAddImage = document.querySelector(`.image`)
+		let emoji
+
+		if (whereAddImage) {
+			switch (numberMenu) {
+				case 1:
+					emoji = whereAddImage.innerHTML = `<img src="../src/img/emoji_1.png" alt="Image">`
+					break
+				case 2: emoji = whereAddImage.innerHTML = `<img src="../src/img/emoji_2webp.webp" alt="Image">`
+					break
+				case 3: emoji = whereAddImage.innerHTML = `<img src="../src/img/emoji_3.png" alt="Image">`
+					break
+			}
+		}
+	</script>
+</body>
+
+</html>
