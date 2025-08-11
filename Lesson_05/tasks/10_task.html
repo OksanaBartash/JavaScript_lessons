@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_5</title>
+	<link rel="stylesheet" href="/src/css/style.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #10</h1>
+				<div class="page-item">
+					<h6>1-варіант</h6>
+					<p>
+						Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами.
+					</p>
+					<br>
+					<h6>2-варіант</h6>
+					<p>
+						Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+					</p>
+				</div>
+			</div>
+
+			<!-- 1-варіант -->
+			<!--<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					const minUser = parseInt(prompt(`Введіть мінімальне значення min=`, '3'))
+					const maxUser = parseInt(prompt(`Введіть максимальне значення max=`, '10'))
+					let sum = 0
+
+					for (let i = minUser; i < maxUser; i++) {
+						if (i % 2 !== 0) {
+							sum = sum + i
+						}
+					}
+					document.write(`Cуму всіх непарних чисел, що знаходяться між min=${minUser} та max=${maxUser} складає ${sum}`)
+				}
+			</script>-->
+
+			<!-- 2-варіант -->
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					const minUser = parseInt(prompt(`Введіть мінімальне значення min=`, '3'))
+					const maxUser = parseInt(prompt(`Введіть максимальне значення max=`, '100'))
+					let sum = 0
+					let counter = 0
+
+					for (let i = minUser; i < maxUser; i++) {
+						if (i % 2 !== 0) {
+							sum = sum + i
+							counter++
+						}
+						if (counter === 5) break
+					}
+
+
+					document.write(`Cуму 5 непарних чисел, що знаходяться між min=${minUser} та max=${maxUser} складає ${sum}`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

@@ -19,7 +19,7 @@
 		const numberСentimeters = parseFloat(prompt(`Введіть кількість сантиметрів:`, `0`))
 
 		const centimetersToMeters = numberСentimeters / 100
-		const centimetersToKilometers = numberСentimeters / 1000
+		const centimetersToKilometers = centimetersToMeters / 1000
 
 		document.write(`
 			Дано сантиметри: ${numberСentimeters} см. <br> 

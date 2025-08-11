@@ -29,8 +29,9 @@
 
 		if (totalSumProduct < amountMoney) {
 			const amountTicketLottery = parseInt((amountMoney - totalSumProduct) / 4)
-
-			document.write(`У вас є чудовий шанс стати переможцем лотереї, ми можемо запропонувати Вам ${amountTicketLottery} білетів. Не прогав свій шанс!`)
+			if (amountTicketLottery) {
+				document.write(`У вас є чудовий шанс стати переможцем лотереї, ми можемо запропонувати Вам ${amountTicketLottery} білетів. Не прогав свій шанс!`)
+			}
 		} else {
 			document.write(`Вам відмовлено у покупці в зв"язку з нестачею коштів`)
 		}

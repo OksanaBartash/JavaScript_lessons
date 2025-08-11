@@ -19,26 +19,53 @@
 
 
 	<script>
+		// ----- #1 ------
+		//const min = 1
+		//const max = 5
+
+		//const number = Math.floor(min + Math.random() * (max - min) + 1)
+		//console.log(`Випадкове число: ${number}`)
+
+		//if (number < 3) {
+		//	console.log(`число < 3`)
+		//	if (number < 2 ) {
+		//		console.log(`число = 1`)
+		//	} else console.log(`число = 2`)
+		//} 
+		//else if (number > 3) {
+		//	console.log(`число > 3`)
+		//	if (number > 4) {
+		//		console.log(`число = 5`)
+		//	} else console.log(`число = 4`)
+		//} else {
+		//	console.log(`число = 3`)
+		//}
+
+
+
+
+		// ----- #2 ------
 		const min = 1
 		const max = 5
-		const number = Math.floor(min + Math.random() * (max - min) + 1)
 
-		console.log(`Випадкове число: ${number}`)
+		const numberComp = Math.floor(min + Math.random() * (max - min) + 1)
 
-		if (number < 3) {
-			console.log(`число < 3`)
-			if (number < 2 ) {
-				console.log(`число = 1`)
-			} else console.log(`число = 2`)
-		} 
-		else if (number > 3) {
-			console.log(`число > 3`)
-			if (number > 4) {
-				console.log(`число = 5`)
-			} else console.log(`число = 4`)
-		} else {
-			console.log(`число = 3`)
+		let numberUser = parseInt(prompt(`Вгадай число від 1 до 5 з 2-х раз, це твоя 1 спроба`))
+
+		if (numberUser === numberComp)
+		document.write(`Вітаю ти вгадав з 1-ї спроби! <br>`) 
+		else {
+			numberUser = parseInt(prompt(`Вгадай число від 1 до 5 з 2-х раз, це твоя 2 спроба`))
+
+			if (numberUser !== numberComp) {
+				document.write(`Нажаль ти не вгадав( <br>`)
+			} else {
+				document.write(`Вітаю ти вгадав з 2-ї спроби! <br>`)
+
+			}
 		}
+
+		document.write(`Задумане число: ${numberComp} <br>`)
 	</script>
 </body>
 

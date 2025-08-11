@@ -29,7 +29,9 @@
 
 		if (numberCandies_1 > numberCandies_2) 
 			document.write(`Цукерок найбільше у ${nameChild_1}`)
-		else document.write(`Цукерок найбільше у ${nameChild_2}`)
+		else  if (numberCandies_1 < numberCandies_2)
+		document.write(`Цукерок найбільше у ${nameChild_2}`)
+		else document.write(`Цукерок у  ${nameChild_1} та ${nameChild_2} однакова кількість`)
 	</script>
 </body>
 

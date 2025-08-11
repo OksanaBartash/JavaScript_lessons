@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_5</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #2</h1>
+				<div class="page-item">
+					<p>
+						Вивести на екран номери місяців весни і літа (від 3 до 8)
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					for (let mounthNunber = 3; mounthNunber <= 8; mounthNunber++) {
+						if (mounthNunber < 6)
+							document.write(`Весняний місяць №${mounthNunber} <br>`)
+						else
+							document.write(`Літній місяць №${mounthNunber} <br>`)
+					}
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

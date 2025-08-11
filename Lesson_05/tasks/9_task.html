@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_5</title>
+	<link rel="stylesheet" href="/src/css/style.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #9</h1>
+				<div class="page-item">
+					<h6>1-варіант</h6>
+					<p>
+						Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число користувача
+						(використати confirm).
+					</p>
+					<br>
+
+					<h6>2-варіант</h6>
+					<p>
+						Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+					</p>
+				</div>
+			</div>
+
+			<!-- 1-варіант -->
+			<!--<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					alert(`Будь-ласка загадайте число від 1-го до 10`)
+					let res = false
+
+					for (let i = 0; i < 3; i++) {
+						let compNumber = 1 + Math.floor(Math.random() * 10)
+						res = confirm(`Ваше число ${compNumber}?`)
+
+						if (res) {
+							document.write(`Перемога комп"ютер відгадав ваше число ${compNumber}!`)
+							break;
+						}
+					}
+					if (!res)
+						document.write(`Нажаль комп"ютер не вгадав Ваше число <br>`)
+				}
+			</script>-->
+
+			<!-- 2-варіант -->
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					alert(`Будь-ласка загадайте число від 1-го до 10`)
+					let res = false
+
+					for (let i = 0; i < Infinity; i++) {
+						let compNumber = 1 + Math.floor(Math.random() * 10)
+						res = confirm(`Ваше число ${compNumber}?`)
+
+						if (res) {
+							document.write(`Перемога комп"ютер відгадав ваше число ${compNumber}!`)
+							break;
+						}
+					}
+				}
+			</script>
+
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
