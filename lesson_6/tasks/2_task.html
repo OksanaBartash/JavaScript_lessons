@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_6</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #2</h1>
+				<div class="page-item">
+					<p>
+						З клавіатури поступово вводяться символи поки не буде введено символ «а». Вивести рядок символів у зворотному порядку.
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					let userSymbol = ''
+					let res = ''
+
+					while (true) {
+						 userSymbol = (prompt(`Введіть символ`, 'n'))
+						 if(userSymbol === 'a') {
+							break
+						 }
+						 res += userSymbol.toLowerCase()
+					}
+					document.write(`Введені символи по порядку ${res} <br>`)
+
+					let reversed = ''
+					for(let i = res.length - 1; i >=0; i--) { // res.length - 1 - беремо останній символ
+						reversed += res[i]
+					}
+					document.write(`Введені символи в зворотньому порядку ${reversed}`)
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
