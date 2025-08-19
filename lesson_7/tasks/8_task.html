@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_7</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<style>
+		img {
+			max-width: 100px;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #8</h1>
+				<div class="page-item">
+					<p>
+						Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання,
+						куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a: &lt;a&gt;
+						&lt;img src=”шлях” &gt; &lt;/a&gt;))
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					function getBanner(title, link, image) {
+
+						let banner = `
+
+							<a href="${link}"  target="_blank">
+								<h3>${title}</h3> 
+								<img src="../src/img/${image}.png" alt="${title}">
+							</a> <br> <br>`
+
+						return banner
+					}
+
+					//---
+					const res1 = getBanner(
+						'Золотистий ретривер',
+						'https://uk.wikipedia.org/wiki/Золотистий_ретривер',
+						1
+					);
+
+					const res2 = getBanner(
+						'Лабрадор-ретривер',
+						'https://uk.wikipedia.org/wiki/Лабрадор-ретривер',
+						2
+					);
+
+					const res3 = getBanner(
+						'Вівчарка',
+						'https://uk.wikipedia.org/wiki/Вівчарка',
+						3
+					);
+
+					const res4 = getBanner(
+						'Джек-рассел-терʼєр',
+						'https://uk.wikipedia.org/wiki/Джек-рассел-тер%27єр',
+						4
+					);
+					document.write(res1)
+					document.write(res2)
+					document.write(res3)
+					document.write(res4)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

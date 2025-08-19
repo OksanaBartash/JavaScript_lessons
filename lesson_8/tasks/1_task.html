@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_8</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #1</h1>
+				<div class="page-item">
+					<p>
+						Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії
+						він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і
+						відмінно), трійочник(є хоча би одна трійка)).
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					//Питаємо цількість оцінок з К предметів:
+					const marksNumber = parseInt(prompt(`Ведіть кількість оцінок`, 6))
+
+					let marks = []
+
+					for (let marksIndex = 0; marksIndex < marksNumber; marksIndex++
+					) {
+						const studentMarks = parseInt(prompt(`Введіть оцінку №${marksIndex + 1} для учня`, ''))
+						marks.push(studentMarks)
+					}
+
+					document.write(`оцінки учня: ${marks} <br><br>`)
+
+					//Знайти середній бал
+					let averageMark = 0
+					let sumMarks = 0
+
+					for (let i = 0; i < marks.length; i++) {
+						sumMarks += marks[i]
+					}
+					averageMark = (sumMarks / marks.length).toFixed(2)
+
+					function whoStudent(marks, averageMark) {
+						if(averageMark < 3 || marks.includes(2)) {
+							return `Учень "двійочник" його середній бал ${averageMark}`
+						} else if (averageMark < 4 || marks.includes(3)) {
+							return `Учень "трійочник" його середній бал ${averageMark}`
+						} else if (averageMark < 5) {
+							return `Учень "хорошист" його середній бал ${averageMark}`
+						} else {
+							return `Учень "відмінник" його середній бал ${averageMark}`
+						} 
+					}
+					//---
+					document.write(whoStudent(marks, averageMark))
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

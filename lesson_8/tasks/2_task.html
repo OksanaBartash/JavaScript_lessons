@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_8</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<style>
+		.page-item ul,
+		.page-item li {
+			list-style: disc;
+			margin-top: 10px;
+		}
+
+		.page-item ul {
+			padding-left: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #2</h1>
+				<div class="page-item">
+					<p>
+						Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. <br> Вивести на екран:
+					</p>
+					<ul>
+						<li>
+							номери днів, протягом яких кількість відвідувачів була меншою за 20;
+						</li>
+						<li>
+							номери днів, коли кількість відвідувачів була мінімальною;
+						</li>
+						<li>
+							номери днів, коли кількість відвідувачів була максимальною;
+						</li>
+						<li>
+							загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					let weekNumberVisitors = []
+					let sumVisitors = 0
+					let day
+
+					// Знаходимо кількість відвідувачів магазину за тиждень
+					for (day = 1; day <= 7; day++) {
+						const dayNumberVisitors = 15 + Math.floor(Math.random() * 25)
+						weekNumberVisitors.push(dayNumberVisitors)
+						sumVisitors += dayNumberVisitors
+
+						document.write(`день №${day} було відвдувачів ${dayNumberVisitors} <br>`)
+					}
+					document.write(`Загальна сума відвідувачів за тиждень ${sumVisitors}<br> <br>`)
+
+					// Функція для пошуку днів з відвідувачами < 20
+					function daysWhenVisitorLessThan20(visitors) {
+						let result = []
+						for (let i = 0; i < visitors.length; i++) {
+							if (visitors[i] < 20)
+								result.push(i + 1)
+						}
+						return result
+					}
+					let badDays = daysWhenVisitorLessThan20(weekNumberVisitors)
+					document.write(`Дні, коли було менше 20 відвідувачів: ${badDays} <br> <br>`)
+
+
+					// Функція для пошуку днів коли кількість відвідувачів була мінімальною
+					function dayMinVisitors(visitors) {
+						let minValue = Math.min(...visitors) // знаходимо мінімальне значення
+						let minDays = []
+
+						for (let i = 0; i < visitors.length; i++) {
+							if (visitors[i] === minValue)
+								minDays.push(i + 1)
+						}
+						return minDays
+					}
+					let min = dayMinVisitors(weekNumberVisitors)
+					document.write(`Дні, коли кількість відвідувачів була мінімальною: ${min}<br> <br>`)
+
+
+
+					// Функція для пошуку днів коли кількість відвідувачів була максимальною
+					function dayMaxVisitors(visitors) {
+						let maxValue = Math.max(...visitors) // знаходимо максимальне значення
+						let maxDays = []
+
+						for (let i = 0; i < visitors.length; i++) {
+							if (visitors[i] === maxValue)
+								maxDays.push(i + 1)
+						}
+						return maxDays
+					}
+					let max = dayMaxVisitors(weekNumberVisitors)
+					document.write(`Дні, коли кількість відвідувачів була максимальною: ${max}<br> <br>`)
+
+
+					// Функція для пошуку загальної кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+					function dayVisitors(visitors) {
+						let sumWorkDay = 0
+						let sumWeekendDay = 0
+
+						for (let i = 0; i < 5; i++) sumWorkDay += visitors[i]
+						for (let i = 5; i < 7; i++) sumWeekendDay += visitors[i]
+
+						return { sumWorkDay, sumWeekendDay }
+					}
+
+					let { sumWorkDay, sumWeekendDay } = dayVisitors(weekNumberVisitors)
+					document.write(`Загальна кількість клієнтів <br> у робочі дні: ${sumWorkDay}, <br> на вихідних: ${sumWeekendDay} <br><br>`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

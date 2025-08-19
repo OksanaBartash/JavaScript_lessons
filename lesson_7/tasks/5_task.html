@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_7</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<style>
+		.page-item ul,
+		.page-item li {
+			list-style: auto;
+			margin-top: 10px;
+		}
+
+		.page-item ul {
+			padding-left: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #5</h1>
+				<div class="page-item">
+					<p>
+						Створити окремі функції, які переводять:
+					</p>
+					<ul>
+						<li>Сантиметри у дюйми;</li>
+						<li>Кілограми у фунти;</li>
+						<li>Кілометри у милі.</li>
+					</ul>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					function centimeters_to_inches(sm) {
+						return sm / 2.54
+					}
+
+					function kilograms_to_pounds(kg) {
+						return kg * 2.2046
+					}
+
+					function kilometers_to_miles(km) {
+						return km / 1.609
+					}
+
+					//---
+					const a = 100
+					const res1 = centimeters_to_inches(a).toFixed(2)
+					const res2 = kilograms_to_pounds(a).toFixed(2)
+					const res3 = kilometers_to_miles(a).toFixed(2)
+
+					document.write(`
+					Кількість дюймів в ${a}см =  ${res1} <br><br>
+					Кількість фунтів в ${a}кг = ${res2} <br><br>
+					Кількість миль в ${a}км = ${res3} <br><br>
+					`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

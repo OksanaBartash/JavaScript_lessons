@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_7</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<style>
+		.page-item ul,
+		.page-item li {
+			list-style: auto;
+			margin-top: 10px;
+		}
+
+		.page-item ul {
+			padding-left: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #3</h1>
+				<div class="page-item">
+					<p>
+						Створити окремі функції, які для 4 чисел знаходять:
+					</p>
+					<ul>
+						<li>суму;</li>
+						<li>добуток;</li>
+						<li>середнє арифметичне;</li>
+						<li>мінімальне значення. </li>
+					</ul>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					//---#1---
+					function sumNumbers(num1, num2, num3, num4) {
+						return num1 + num2 + num3 + num4
+					}
+					//---#2---
+					function productNumbers(num1, num2, num3, num4) {
+						return num1 * num2 * num3 * num4
+					}
+
+					//---#3---
+					function arithmeticMeanNumbers(num1, num2, num3, num4) {
+						return (num1 + num2 + num3 + num4) / 4
+					}
+					//---#4---
+					function minimumValueNumbers(num1, num2, num3, num4) {
+						//---4/1
+						//let min = num1
+						//if (num2 < min) min = num2
+						//if (num3 < min) min = num3
+						//if (num4 < min) min = num4
+
+						//---4/2
+						let numbers = [num1, num2, num3, num4]
+						let min = numbers[0]
+						for (let i = 0; i < numbers.length; i++) {
+							if (numbers[i] < min)
+								min = numbers[i]
+						}
+
+						return min
+					}
+
+					//----
+					const res1 = sumNumbers(1, 2, 3, 4)
+					const res2 = productNumbers(1, 2, 3, 4)
+					const res3 = arithmeticMeanNumbers(1, 2, 3, 4)
+					const res4 = minimumValueNumbers(2, 12, 13, -6)
+
+
+
+					document.write(`
+					Сумма  =  ${res1} <br><br>
+					Добуток = ${res2} <br><br>
+					Середнє арифметичне = ${res3} <br><br>
+					Мінімальне значення = ${res4} <br><br>
+					`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

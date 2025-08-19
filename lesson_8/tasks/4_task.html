@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_8</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<style>
+		.page-item ul,
+		.page-item li {
+			list-style: disc;
+			margin-top: 10px;
+		}
+
+		.page-item ul {
+			padding-left: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #4</h1>
+				<div class="page-item">
+					<p>
+						Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+					</p>
+					<ul>
+						<li>
+							починаються на букву «А»;
+						</li>
+						<li>
+							перша і остання літери співпадають;
+						</li>
+						<li>
+							складаються з більше ніш 5 символів;
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					const cars = [
+						"AA 3256 BA",
+						"BC 4821 MB",
+						"K 53",
+						"CE 1748 IT",
+						"BA 6390 KB",
+						"AB 2571 PA",
+						"02 B"
+					]
+					for (let i = 0; i < cars.length; i++) {
+						document.write(`${cars[i]}, <br>`)
+					}
+
+					//Кількість номерів, що починаються на "А"
+					function firstSymbol(cars) {
+						let countCars = 0
+						for (let i = 0; i < cars.length; i++) {
+							let carNumber = cars[i]
+							if (carNumber[0] === 'A') {
+								countCars++
+							}
+						}
+						return countCars
+					}
+					document.write(`<br> Кількість номерів, що починаються на "А": ${firstSymbol(cars)} <br> <br>`)
+
+
+					//Кількість номерів, де перша і остання літери співпадають
+					function firstAndLastSymbol(cars) {
+						let countCars = 0
+
+						for (let i = 0; i < cars.length; i++) {
+							let carNumber = cars[i]
+							let first = carNumber[0]
+							let last = carNumber[carNumber.length - 1]
+
+							if (first === last) {
+								countCars++
+							}
+						}
+						return countCars
+					}
+					document.write(`Кількість номерів, де перша і остання літери співпадають: ${firstAndLastSymbol(cars)} <br> <br>`)
+
+
+					//Кількість номерів, складаються з більше ніш 5 символів
+					function moreThen5Symbols(cars) {
+						let countCars = 0
+
+						for (let i = 0; i < cars.length; i++) {
+							let carNumber = cars[i]
+
+							if (carNumber.length > 5) {
+								countCars++
+							}
+						}
+						return countCars
+					}
+					document.write(`Кількість номерів, складаються з більше ніш 5 символів: ${moreThen5Symbols(cars)} <br> <br>`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

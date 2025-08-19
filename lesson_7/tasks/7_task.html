@@ -4,10 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lesson_5</title>
+	<title>Lesson_7</title>
 	<link rel="stylesheet" href="../src/css/style.css">
 	<style>
-
+		img {
+			max-width: 200px;
+			width: 100%;
+		}
 	</style>
 </head>
 
@@ -16,14 +19,12 @@
 		<header> </header>
 		<main class="page">
 			<div class="page-container">
-				<h1 class="page-title">Задача #8</h1>
+				<h1 class="page-title">Задача #7</h1>
 				<div class="page-item">
 					<p>
-						Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+						Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень
+						передаються у функцію)
 					</p>
-					<div class="page-img" style="margin-top: 10px;">
-						<img src="../src/img/task_8.png" alt="image">
-					</div>
 				</div>
 			</div>
 
@@ -31,16 +32,18 @@
 				if (confirm('Почати тестування?')) {
 					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
 
-					let userPnumber = parseInt(prompt(`Введіть кількість абзаців/параграфів`, '1'))
+					function getImage(numbImage) {
+						let img = `<img src="" alt="Image">`
 
-					for (let title = 1; title <= 4; title++) {
-
-						for (let p = 1; p <= userPnumber; p++) {
-							document.write(`<p>Розділ ${title}, параграф ${p}</p>`)
+						for (let i = 1; i <= numbImage; i++) {
+							img = `<img src="../src/img/${i}.png" alt="Image">`
 						}
-						document.write(`<br> `)
-						userPnumber ++
+						return img
 					}
+
+					//---
+					const imageRandomly = Math.floor(Math.random() * 4) + 1
+					document.write(getImage(imageRandomly))
 				}
 			</script>
 		</main>

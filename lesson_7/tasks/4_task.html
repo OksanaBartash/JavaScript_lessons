@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_7</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #4</h1>
+				<div class="page-item">
+					<p>
+						Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: <br>
+						кількість парних, <br>
+						кількість додатних, <br>
+						кількість більших за 100.
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+
+					function eveNumber(num_1, num_2, num_3) {
+						let countEvent = 0
+						if (num_1 % 2 == 0) countEvent++
+						if (num_2 % 2 == 0) countEvent++
+						if (num_3 % 2 == 0) countEvent++
+						return countEvent
+					}
+
+					function positiveNumbers(num_1, num_2, num_3) {
+						let positiveCount = 0
+						if (num_1 > 0) positiveCount++
+						if (num_2 > 0) positiveCount++
+						if (num_3 > 0) positiveCount++
+						return positiveCount
+					}
+
+					function greaterThan100(num_1, num_2, num_3) {
+						let greaterCount = 0
+						if (num_1 > 100) greaterCount++
+						if (num_2 > 100) greaterCount++
+						if (num_3 > 100) greaterCount++
+						return greaterCount
+					}
+
+					//---
+					const res1 = eveNumber(100, 6, 9)
+					const res2 = positiveNumbers(-3, -14, 9)
+					const res3 = greaterThan100(99, 36, 110)
+
+					document.write(`
+					Кількість парних чисел =  ${res1} <br><br>
+					Кількість додатних чисел = ${res2} <br><br>
+					Кількість чисел більших за 100 = ${res3} <br><br>
+					`)
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
