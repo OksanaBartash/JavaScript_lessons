@@ -5,3 +5,7 @@ Lesson #3:  https://oksanabartash.github.io/JavaScript_lessons/lesson_3/index.ht
 Lesson #5:  https://oksanabartash.github.io/JavaScript_lessons/lesson_5/index.html
 
 Lesson #6:  https://oksanabartash.github.io/JavaScript_lessons/lesson_6/index.html
+
+Lesson #7: https://oksanabartash.github.io/JavaScript_lessons/lesson_7/index.html
+
+Lesson #8: https://oksanabartash.github.io/JavaScript_lessons/lesson_8/index.html
