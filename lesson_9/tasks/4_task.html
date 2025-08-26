@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_9</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача #4</h1>
+				<div class="page-item">
+					<p>
+						Дано масив елементів. Вивести на екран елементи, що більші за 100
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					const elementsArr = [36, -95, 47, 301, 9, -6, 78, 106, 211]
+					const greaterThan100 = []
+
+					for (const element of elementsArr) {
+						if (element > 100)
+						greaterThan100.push(element)
+					}
+
+					document.write(greaterThan100.join(", "));
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

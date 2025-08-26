@@ -32,18 +32,29 @@
 				if (confirm('Почати тестування?')) {
 					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
 
-					function getImage(numbImage) {
-						let img = `<img src="" alt="Image">`
+					////--- 1 ---
+					//function getImage(numbImage) {
+					//	let img = `<img src="" alt="Image">`
 
-						for (let i = 1; i <= numbImage; i++) {
-							img = `<img src="../src/img/${i}.png" alt="Image">`
-						}
-						return img
+					//	for (let i = 1; i <= numbImage; i++) {
+					//		img = `<img src="../src/img/${i}.png" alt="Image">`
+					//	}
+					//	return img
+					//}
+
+					////---
+					//const imageRandomly = Math.floor(Math.random() * 4) + 1
+					//document.write(getImage(imageRandomly))
+
+
+
+					//--- 2 ---
+					function getImage() {
+						const nameImage = Math.floor(Math.random() * 4) + 1
+						return	`<img src="../src/img/${nameImage}.png" alt="Image">`
 					}
-
 					//---
-					const imageRandomly = Math.floor(Math.random() * 4) + 1
-					document.write(getImage(imageRandomly))
+					document.write(getImage())
 				}
 			</script>
 		</main>

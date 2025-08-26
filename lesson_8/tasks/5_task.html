@@ -40,29 +40,49 @@
 			<script>
 				if (confirm('Почати тестування?')) {
 					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+					//--- 1 ---
+					//let productPrices = [1000, 20, 31]
+					//let productTitles = ['cheese', 'juice', 'bread']
+					//const userMoney = parseFloat(prompt(`Введіть кількість грошей скільки має користувач`, 1105))
 
+					//function shopping(userMoney, productTitles, productPrices) {
+					//	let basket = []
+
+					//	// Купуємо поки є гроші хоча б на найдешевший товар
+					//	while (userMoney >= Math.min(...productPrices)) {  //- "...productPrices" — це оператор spread, він «розгортає» масив у список значень.
+					//		for (let i = 0; i < productPrices.length; i++) {
+					//			if (userMoney >= productPrices[i]) {
+					//				basket.push(productTitles[i])
+					//				userMoney -= productPrices[i]
+					//			}
+					//		}
+					//	}
+					//	return basket
+					//}
+
+					//let affordableProducts = shopping(userMoney, productTitles, productPrices)
+					//document.write(`Користувач може собі дозволити: ${affordableProducts.join(', ')}`)
+
+
+					//--- 2 ---
 					let productPrices = [1000, 20, 31]
 					let productTitles = ['cheese', 'juice', 'bread']
-					const userMoney = parseFloat(prompt(`Введіть кількість грошей скільки має користувач`, 1105))
+					const userMoney = parseFloat(prompt(`Введіть кількість грошей скільки має користувач`, 2105))
 
-					function shopping(userMoney, productTitles, productPrices) {
-						let basket = []
+					
+					function affordableProducts (userMoney, titles, prices) {
+						let result = []
 
-						// Купуємо поки є гроші хоча б на найдешевший товар
-						while (userMoney >= Math.min(...productPrices)) {  //- "...productPrices" — це оператор spread, він «розгортає» масив у список значень.
-							for (let i = 0; i < productPrices.length; i++) {
-								if (userMoney >= productPrices[i]) {
-									basket.push(productTitles[i])
-									userMoney -= productPrices[i]
-								}
+						for (let i =0; i < prices.length; i++) {
+							if(userMoney >= prices[i]) {
+								result.push(titles[i])
 							}
 						}
-						return basket
+						return result
 					}
 
-					let affordableProducts = shopping(userMoney, productTitles, productPrices)
-					document.write(`Користувач може собі дозволити: ${affordableProducts.join(', ')}`)
-
+					let shopping = affordableProducts(userMoney, productTitles, productPrices)
+					document.write(`Користувач може собі дозволити: ${shopping.join(', ')}`)
 				}
 			</script>
 		</main>

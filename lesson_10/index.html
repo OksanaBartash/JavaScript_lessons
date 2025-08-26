@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_10</title>
+	<link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача </h1>
+				<div class="page-item">
+					<p>
+						Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					//============================
+					const numberPrices = 10
+					let arrayPricesValuablePapers = []
+
+					for (let i = 0; i < numberPrices; i++) {
+						const priceValuablePapers = parseInt(1 + Math.random() * 10000)
+						arrayPricesValuablePapers.push(priceValuablePapers)
+					}
+
+					document.write(arrayPricesValuablePapers.join(', '))
+					document.write(`<br>`)
+
+					//============================
+					// 1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
+
+					//const elemGreaterThan1000 = arrayPricesValuablePapers.filter((price) => price > 1000)
+					//document.write(arrayGreaterThan1000.join(', '))
+
+
+					//============================
+					// 2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+					//--- 1 ---
+					//const indexGreaterThan1000 = []
+					//arrayPricesValuablePapers.forEach((price, ind) => {
+					//	if(price > 1000) 
+					//	indexGreaterThan1000.push(ind)
+					//})
+					// document.write(indexGreaterThan1000.join(', '))
+					//--- 2 ---
+					//const indexGreaterThan1000 = arrayPricesValuablePapers.reduce((prevPrice, elem) => (elem > 1000 ? prevPrice + elem : prevPrice))
+
+					//document.write(indexGreaterThan1000)
+
+
+					//============================
+					// 3) Сформувати список з тих цін, які більші за попереднє значення
+					//---1---
+					//const greaterThanPrevious = arrayPricesValuablePapers.filter(
+					//	(price, index, array) => price > 0 && price > array[index - 1]
+					//)
+
+					//document.write(greaterThanPrevious.join(', '))
+
+					//---2---
+					//arrayPricesValuablePapers = arrayPricesValuablePapers.sort((a, b) => a-b)
+					//const firstIndex = arrayPricesValuablePapers.indexOf(0)
+					//arrayPricesValuablePapers.splice(firstIndex, 1)
+
+					//document.write(arrayPricesValuablePapers.join(', '))
+
+
+					//============================
+					// 4) Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+
+					//const maxPrice = Math.max(...arrayPricesValuablePapers)
+
+					//const percentagesPriceToMax = arrayPricesValuablePapers.map((price) => parseInt((price * 100) / maxPrice))
+
+					//document.write(percentagesPriceToMax.join('%, '))
+					//document.write(` <br> maxPrice: ${maxPrice} <br>`)
+
+
+					//============================
+					// 5)Підрахувати кількість змін цін
+
+					//--- 1 ---
+					//let numberPriceChanges = 0
+
+					//for (let i = 0; i < arrayPricesValuablePapers.length; i++) {
+					//	numberPriceChanges = arrayPricesValuablePapers.filter((price, index, array) => index > 0 && price !== array[index - 1])
+					//}
+					//document.write(` <br> кількість змін цін: ${numberPriceChanges.length} <br>`)
+
+					//--- 2 ---
+					//let numberPriceChanges = 
+					//arrayPricesValuablePapers.reduce((count, price, index, array) => 
+					//index > 0 && price !== array[index - 1] ? count + 1 : count, 0
+					//)
+					//document.write(` <br> кількість змін цін: ${numberPriceChanges} <br>`)
+
+					//============================
+					// 6)Визначити, чи є ціна, що менше 1000
+
+					//if (arrayPricesValuablePapers.some((price) => price < 1000)) {
+					//	document.write(`Yes, there is a price less than 1000`)
+					//}
+					//else document.write(`No`)
+
+
+					//============================
+					// 7)Визначати, чи усі ціни більше за 1000
+
+					//if (arrayPricesValuablePapers.every((price) => price > 1000)) {
+					//	document.write(`Yes, all prices are more than 1000`)
+					//}
+					//else document.write(`No`)
+
+
+					//============================
+					// 8)Підрахувати кількість цін, що більше за 1000
+
+					//let quantityPricesMore1000 = 0
+
+					//for (let i = 0; i < arrayPricesValuablePapers.length; i++) {
+					//	quantityPricesMore1000 = arrayPricesValuablePapers.filter((price) => price > 1000)
+					//}
+					//document.write(` <br> кількість цін, що більше за 1000: ${quantityPricesMore1000.length} <br>`)
+
+
+					//============================
+					// 9)Підрахувати суму цін, що більше за 1000
+
+					//const sumPricesMore1000 = arrayPricesValuablePapers.reduce(
+					//	(prevPrice, price) => (price > 1000 ? prevPrice + price : prevPrice), 0
+					//)
+					//document.write(`Cумa цін, що більше за 1000 = ${sumPricesMore1000}`)
+
+
+					//============================
+					// 10)Знайти першу ціну, що більше за 1000
+
+					//const findFirstPriceMore1000 = arrayPricesValuablePapers.find(
+					//	(price) => price > 1000
+					//)
+					//document.write(`першa цінa, що більше за 1000 = ${findFirstPriceMore1000}`)
+
+
+					//============================
+					// 11)Знайти індекс першої ціни, що більше за 1000
+
+					//const findFirstIndexMore1000 = arrayPricesValuablePapers.findIndex(
+					//	(price) => price > 1000
+					//)
+					//document.write(`індекс першої ціни, що більше за 1000 = ${findFirstIndexMore1000}`)
+
+
+					//============================
+					// 12)Знайти останню ціну, що більше за 1000
+
+					//const findLastPriceMore1000 = arrayPricesValuablePapers.findLast(
+					//	(price) => price > 1000
+					//)
+					//document.write(`останн. цінa, що більше за 1000 = ${findLastPriceMore1000}`)
+
+
+					//============================
+					// 13) Знайти індекс останньої ціни, що більше за 1000
+
+					//const findLastIndexMore1000 = arrayPricesValuablePapers.findLastIndex(
+					//	(price) => price > 1000
+					//)
+					//document.write(`індекс останньої ціни, що більше за 1000 = ${findLastIndexMore1000}`)
+				}
+
+			</script>
+		</main>
+
+		<footer> </footer>
+	</div>
+</body>
+
+</html>

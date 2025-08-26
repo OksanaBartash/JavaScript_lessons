@@ -36,13 +36,31 @@
 				if (confirm('Почати тестування?')) {
 					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
 
-					const nameStudents = ['Оля', 'Іван', 'Іра', 'Коля', 'Даша', 'Іван', 'Толя', 'Іван']
-					let countIvan = 0
+					//--- 1 ---
+					//const nameStudents = ['Оля', 'Іван', 'Іра', 'Коля', 'Даша', 'Іван', 'Толя', 'Іван']
+					//let countIvan = 0
 
-					for (let i = 0; i < nameStudents.length; i++) {
-						if (nameStudents[i] == 'Іван') countIvan++
+					//for (let i = 0; i < nameStudents.length; i++) {
+					//	if (nameStudents[i] == 'Іван') countIvan++
+					//}
+					//document.write(`${countIvan} рази зустрічається ім’я «Іван» в класі`)
+
+
+					//--- 2 ---
+					const nameStudents = ['Оля', 'Іван', 'Іра', 'Толя', 'Даша', 'Іван', 'Толя', 'Іван']
+
+					function getStudent(arr, target) {
+						let countStudents = 0
+						arr.forEach(name => {
+							if (name === target) countStudents++
+						});
+						return countStudents
 					}
-					document.write(`${countIvan} рази зустрічається ім’я «Іван» в класі`)
+					const Ivan = getStudent(nameStudents, 'Іван')
+					document.write(`${Ivan} рази зустрічається ім’я «Іван» в класі  <br>`)
+					
+					const Toly = getStudent(nameStudents, 'Толя')
+					document.write(`${Toly} рази зустрічається ім’я «Толя» в класі`)
 				}
 			</script>
 		</main>
