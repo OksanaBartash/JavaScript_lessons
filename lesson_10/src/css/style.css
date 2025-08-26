@@ -47,12 +47,19 @@ body {
 }
 
 ul.page-list {
-    list-style: none;
+    list-style: auto !important;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     gap: 10px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+li {
+    list-style: auto !important;
+    padding-left: 10px;
 }
 
 .page-item {
