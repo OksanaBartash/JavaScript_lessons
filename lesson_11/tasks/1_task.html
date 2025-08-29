@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_11</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача 1. </h1>
+				<div class="page-item">
+					<p class="page-text">
+						Знайти суми елементів у вказаній області (зафарбована область охоплює відповідну половину рядків
+						і стовпців)
+					</p>
+					<div class="page-tables">
+						<table border="2">
+							<tbody>
+								<tr>
+									<td>4</td>
+									<td>2</td>
+									<td>5</td>
+									<td>8</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>1</td>
+									<td>9</td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>2</td>
+									<td>4</td>
+									<td>6</td>
+								</tr>
+								<tr>
+									<td>0</td>
+									<td>1</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					// ------ Створення масиву -----
+
+					//const getRandomRow = (elemCount, min, max) =>
+					//Array.from(
+					//	{length: elemCount},
+					//	()=> min + Math.floor(Math.random()*(max-min + 1))
+					//) 
+					//const getRandomelementsMatrix = (rowCount, colCount, min, max) => 
+					//Array.from(
+					//	{length: rowCount}, ()=> getRandomRow(colCount, min, max)
+					//)
+					//console.log(getRandomelementsMatrix(4, 6, 10, 99))
+
+					const elementsMatrix = [
+						[4, 2, 5, 8],
+						[7, 1, 9, 3],
+						[5, 2, 4, 6],
+						[0, 1, 0, 1],
+					]
+
+					//----- 1 ------
+					// номери рядків від 0 до половини, стовпці від 0 до половини
+					let sum1 = 0
+					for (
+						let rowElem = 0;
+						rowElem < elementsMatrix.length / 2;
+						rowElem++
+					) {
+						for (
+							let colElem = 0;
+							colElem < elementsMatrix[rowElem].length / 2;
+							colElem++
+						) {
+							sum1 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів номери рядків від 0 до половини, стовпці від 0 до половини: ${sum1} <br>`)
+
+
+					//----- 2 ------
+					// номери рядків від 0 до половини, стовпці від половини до кінця
+					let sum2 = 0
+					for (
+						let rowElem = 0;
+						rowElem < elementsMatrix.length / 2;
+						rowElem++
+					) {
+						for (
+							let colElem = elementsMatrix[rowElem].length / 2;
+							colElem < elementsMatrix[rowElem].length;
+							colElem++
+						) {
+							sum2 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів номери рядків від 0 до половини, стовпці від половини до кінця: ${sum2} <br>`)
+
+
+
+					//----- 3 ------
+					// номери рядків - від половини до кінця, стовпці від 0 до половини
+					let sum3 = 0
+					for (
+						let rowElem = elementsMatrix.length / 2;
+						rowElem < elementsMatrix.length;
+						rowElem++
+					) {
+						for (
+							let colElem = 0;
+							colElem < elementsMatrix[rowElem].length / 2;
+							colElem++
+						) {
+							sum3 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів номери рядків - від половини до кінця, стовпці від 0 до половини: ${sum3} <br>`)
+
+
+					//----- 4 ------
+					// номери рядків від половини до кінця , стовпці від половини до кінця
+					let sum4 = 0
+					for (
+						let rowElem = elementsMatrix.length / 2;
+						rowElem < elementsMatrix.length;
+						rowElem++
+					) {
+						for (
+							let colElem = elementsMatrix[rowElem].length / 2;
+							colElem < elementsMatrix[rowElem].length;
+							colElem++
+						) {
+							sum4 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів номери рядків від половини до кінця , стовпці від половини до кінця: ${sum4} <br>`)
+
+
+					//----- 5 ------
+					// Суму парних рядків
+					let sum5 = 0
+					for (
+						let rowElem = 0;
+						rowElem < elementsMatrix.length;
+						rowElem += 2
+					) {
+						for (
+							let colElem = 0;
+							colElem < elementsMatrix[rowElem].length;
+							colElem++
+						) {
+							sum5 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів парних рядків (0 та 2): ${sum5} <br>`)
+
+
+					//----- 6 ------
+					// Суму непарних стовпців
+					let sum6 = 0
+					for (
+						let rowElem = 0;
+						rowElem < elementsMatrix.length;
+						rowElem++
+					) {
+						for (
+							let colElem = 1;
+							colElem < elementsMatrix[rowElem].length;
+							colElem += 2
+						) {
+							sum6 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів непарних стовпців (1 та 3): ${sum6} <br>`)
+
+
+					//----- 7 ------
+					// У парних рядках – непарні стовпці, у непарних – парні.
+					let sum7 = 0
+					let sum8 = 0
+					for (
+						let rowElem = 0;
+						rowElem < elementsMatrix.length;
+						rowElem += 2
+					) {
+						for (
+							let colElem = 1;
+							colElem < elementsMatrix[rowElem].length;
+							colElem += 2
+						) {
+							sum7 += elementsMatrix[rowElem][colElem]
+						}
+					}
+
+					for (
+						let rowElem = 1;
+						rowElem < elementsMatrix.length;
+						rowElem += 2
+					) {
+						for (
+							let colElem = 0;
+							colElem < elementsMatrix[rowElem].length;
+							colElem += 2
+						) {
+							sum8 += elementsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`Cуми елементів у парних рядках – непарні стовпці, у непарних – парні: ${sum7 + sum8} <br>`)
+
+
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

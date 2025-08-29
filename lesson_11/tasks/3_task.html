@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_11</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача 3. </h1>
+				<div class="page-item">
+					<p class="page-text">
+						Морський бій. <br> Випадковим чином на двовимірному полі розміром 6*6 розташовується 5 кораблів.
+						Користувач стріляє вказуючи координати. Гра продовжується поки не потоплено усі кораблі або у
+						користувача не закінчаться снаряди.
+					</p>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					let countShip = 0 // лічильник кораблів
+					let numbersShots = 5 // кількість пострілів
+					let hits = 0 // лічильник влучень
+					let ships = 5 //лічильник кораблі
+
+					// ------ Створення масиву заповнюємо "0"-----
+					const field = Array.from({ length: 6 }, () => Array(6).fill(0))
+
+					// ------ Розміщення кораблів на полі "1" -----
+					while (countShip < ships) {
+						let coordinat_X = Math.floor(Math.random() * 6) // рядок
+						let coordinat_Y = Math.floor(Math.random() * 6) // стовпець
+
+						// перевіряємо чи клітинка порожня
+						if (field[coordinat_X][coordinat_Y] === 0) {
+							field[coordinat_X][coordinat_Y] = 1
+							countShip++
+						}
+					}
+					
+					// ----- Вивід поля на екран ------
+					console.log("Поле з кораблями:")
+					field.forEach(row => console.log(row))
+
+
+					// ------ Цикл ігри -----
+					let countShots = 1
+					while (countShots <= numbersShots && hits < ships) {
+
+						let user_coordinat_X = parseInt(prompt(`Ви робите постріл ${countShots} з ${numbersShots}, введіть координату по осі Х від 1 до 6`, 2)) - 1
+
+						let user_coordinat_Y = parseInt(prompt(`Ви робите постріл ${countShots} з ${numbersShots}, введіть координату по осі Y від 1 до 6`, 3)) - 1
+
+						countShots++
+
+						if (field[user_coordinat_X][user_coordinat_Y] === 1) {
+							field[user_coordinat_X][user_coordinat_Y] = 2
+							hits++
+							alert(`Вітаю ви потопили корабель!`)
+
+						} else if (field[user_coordinat_X][user_coordinat_Y] === 0) {
+							field[user_coordinat_X][user_coordinat_Y] = -1
+							alert(`Ви не влучили, спробуйте ще!`)
+
+						} else { // (-1 або 2 в клітинці)
+							alert(`Сюди вже стріляли`)
+						}
+
+						// ----- Вивід поля на екран ------
+						console.log("Поле з кораблями:")
+						field.forEach(row => console.log(row))
+					}
+
+					// ------ Умови завершення -----
+					if (hits === ships) alert(`Всі кораблі знищені!`)
+					else alert(`Снаряди закінчились`)
+
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

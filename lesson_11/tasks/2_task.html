@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson_11</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header> </header>
+		<main class="page">
+			<div class="page-container">
+				<h1 class="page-title">Задача 2. </h1>
+				<div class="page-item">
+					<p class="page-text">
+						Дано інформацію про прибуток К магазинів протягом тижня.
+					</p>
+					<div class="page-tables">
+						<table border="2">
+							<tbody>
+								<tr>
+									<th>№ з/п</th>
+									<th>Понеділок</th>
+									<th>Вівторок</th>
+									<th>Середа</th>
+									<th>Четвер</th>
+									<th>П'ятниця</th>
+									<th>Субота</th>
+									<th>Неділя</th>
+								</tr>
+								<tr>
+									<td>Магазин №1</td>
+									<td>1200</td>
+									<td>1350</td>
+									<td>1100</td>
+									<td>980</td>
+									<td>1500</td>
+									<td>1700</td>
+									<td>1600</td>
+								</tr>
+								<tr>
+									<td>Магазин №2</td>
+									<td>900</td>
+									<td>1020</td>
+									<td>880</td>
+									<td>950</td>
+									<td>1200</td>
+									<td>1400</td>
+									<td>1250</td>
+								</tr>
+								<tr>
+									<td>Магазин №3</td>
+									<td>1500</td>
+									<td>1600</td>
+									<td>1700</td>
+									<td>1650</td>
+									<td>1800</td>
+									<td>2000</td>
+									<td>2100</td>
+								</tr>
+								<tr>
+									<td>Магазин №4</td>
+									<td>700</td>
+									<td>850</td>
+									<td>800</td>
+									<td>760</td>
+									<td>900</td>
+									<td>950</td>
+									<td>1000</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				if (confirm('Почати тестування?')) {
+					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
+
+					// Дано інформацію про прибуток K магазинів протягом тижня (7 днів),  
+					// кожен підмасив — це дані одного магазину, 
+					// 7 чисел у рядку — це прибутки за дні тижня (понеділок–неділя).
+
+					const profitsMatrix = [
+						[1200, 1350, 1100, 980, 1500, 1700, 1600],   // Магазин 1
+						[900, 1020, 880, 950, 1200, 1400, 1250],     // Магазин 2
+						[1500, 1600, 1700, 1650, 1800, 2000, 2100],  // Магазин 3
+						[700, 850, 800, 760, 900, 950, 1000],        // Магазин 4
+					]
+
+
+					//----- 1 ------
+					//загальний прибуток кожного масиву(магазину) за тиждень; 
+					document.write(` <br> 1) Знайти загальний прибуток кожного масиву(магазину) за тиждень: <br> `)
+
+					let storeProfitForWeek = 0
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++
+					) {
+						storeProfitForWeek = 0
+						for (
+							let colElem = 0;
+							colElem < profitsMatrix[rowElem].length;
+							colElem++
+						) {
+							storeProfitForWeek += profitsMatrix[rowElem][colElem]
+						}
+						document.write(`
+						Прибуток за один тиждень в Магазині №: ${rowElem + 1} 
+						складає ${storeProfitForWeek}<br>
+						`)
+					}
+
+
+					//----- 2 ------
+					//загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.);
+
+					document.write(` <br> 2) Знайти загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.): <br> `)
+
+					for (
+						let colElem = 0;
+						colElem < profitsMatrix[0].length;
+						colElem++
+
+					) {
+						let allStore_totalProfit_1Day = 0
+						for (
+							let rowElem = 0;
+							rowElem < profitsMatrix.length;
+							rowElem++
+						) {
+							allStore_totalProfit_1Day += profitsMatrix[rowElem][colElem]
+						}
+						document.write(` Загальний прибуток усіх магазинів за ${colElem + 1} день:  складає ${allStore_totalProfit_1Day} <br>`)
+					}
+
+
+					//----- 3 ------
+					//загальний прибуток за робочі дні
+
+					document.write(` <br> 3) Знайти загальний прибуток за робочі дні: <br> `)
+
+					let totalProfit_workingDay = 0
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++
+					) {
+						for (
+							let colElem = 0;
+							colElem < 5;
+							colElem++
+						) {
+							totalProfit_workingDay += profitsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`
+						Прибуток за робочі дні складає ${totalProfit_workingDay}<br>
+						`)
+
+
+
+					//----- 4 ------
+					//загальний прибуток за вихідні дні
+
+					document.write(` <br> 4) Знайти загальний прибуток за вихідні дні: <br> `)
+
+					let totalProfit_weekend = 0
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++
+					) {
+						for (
+							let colElem = 5;
+							colElem < profitsMatrix[rowElem].length;
+							colElem++
+						) {
+							totalProfit_weekend += profitsMatrix[rowElem][colElem]
+						}
+					}
+					document.write(`
+						Прибуток за вихідні дні складає ${totalProfit_weekend}<br>
+						`)
+
+
+					//----- 5 ------
+					//максимальний прибуток за середу
+
+					document.write(` <br> 5) Знайти максимальний прибуток за середу: <br> `)
+
+					let maxProfit_Wednesday = 0
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++
+					) {
+						maxProfit_Wednesday += profitsMatrix[rowElem][2]
+					}
+					document.write(`
+						Прибуток за середу складає ${maxProfit_Wednesday}<br>
+						`)
+
+
+
+					//----- 6 ------
+					//сформувати загальний список (одновимірний масив) зі значенням, які що більші за 2000
+
+					document.write(` <br> 6) Cформувати загальний список (одновимірний масив) зі значенням, що більші за 200: <br> `)
+
+					let valuesGreaterThan200 = profitsMatrix.flat(Infinity).filter((el) => el > 200)
+
+					document.write(`
+						загальний список (одновимірний масив) зі значенням, що більші за 200: <br> ${valuesGreaterThan200}<br>
+						`)
+
+
+
+					//----- 7 ------
+					//відсортувати кожен тиждень за зростанням
+
+					document.write(` <br> 7) Bідсортувати кожен тиждень за зростанням: <br> `)
+
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++) {
+						let weekByGrowth = profitsMatrix[rowElem].sort((a, b) => a - b)
+
+						document.write(`
+						Тиждень ${rowElem + 1}: ${weekByGrowth.join(', ')}<br>
+						`)
+
+					}
+					console.log(profitsMatrix)
+
+
+
+					//----- 8 ------
+					//відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків
+
+					document.write(` <br> 8) Bідсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків: <br>  Див. console.log <br> `)
+
+					let sortedRow_week = profitsMatrix.sort((rowA, rowB) => {
+						maxA = Math.max(...rowA)
+						maxB = Math.max(...rowB)
+						return maxB - maxA
+
+					});
+
+					console.log(sortedRow_week)
+
+
+
+					//----- 9 ------
+					//упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто при порівнянні двох рядків треба знайти суму кожного з рядків і порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів повинен іти раніше).
+
+					document.write(` <br> 9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто при порівнянні двох рядків треба знайти суму кожного з рядків і порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів повинен іти раніше). <br> `)
+
+
+					let sumRows_allWeeks = []
+					for (
+						let rowElem = 0;
+						rowElem < profitsMatrix.length;
+						rowElem++
+					) {
+						let sumWeek = 0
+						for (
+							let colElem = 0;
+							colElem < profitsMatrix[rowElem].length;
+							colElem++
+						) {
+							sumWeek += profitsMatrix[rowElem][colElem]
+						}
+						document.write(`
+						Прибуток за один тиждень в Магазині №: ${rowElem + 1} 
+						складає ${sumWeek}<br>
+						`)
+						sumRows_allWeeks.push(sumWeek)
+					}
+
+					let sortRow_sums = sumRows_allWeeks.sort((a, b) => {
+						return b - a
+					})
+
+					document.write(`<br>Відсортовані суми тижнів за спаданням: ${sortRow_sums.join(', ')}`)
+				}
+
+			</script>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<a href="../index.html" class="footer-link page-link">Головна сторінка</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
