@@ -30,7 +30,7 @@
 					let countShip = 0 // лічильник кораблів
 					let numbersShots = 5 // кількість пострілів
 					let hits = 0 // лічильник влучень
-					let ships = 5 //лічильник кораблі
+					let ships = 5 //кількість кораблів
 
 					// ------ Створення масиву заповнюємо "0"-----
 					const field = Array.from({ length: 6 }, () => Array(6).fill(0))
@@ -53,14 +53,14 @@
 
 
 					// ------ Цикл ігри -----
-					let countShots = 1
-					while (countShots <= numbersShots && hits < ships) {
+					let countShotsUser = 1
+					while (countShotsUser <= numbersShots && hits < ships) {
 
-						let user_coordinat_X = parseInt(prompt(`Ви робите постріл ${countShots} з ${numbersShots}, введіть координату по осі Х від 1 до 6`, 2)) - 1
+						let user_coordinat_X = parseInt(prompt(`Ви робите постріл ${countShotsUser} з ${numbersShots}, введіть координату по осі Х від 1 до 6`, 2)) - 1
 
-						let user_coordinat_Y = parseInt(prompt(`Ви робите постріл ${countShots} з ${numbersShots}, введіть координату по осі Y від 1 до 6`, 3)) - 1
+						let user_coordinat_Y = parseInt(prompt(`Ви робите постріл ${countShotsUser} з ${numbersShots}, введіть координату по осі Y від 1 до 6`, 3)) - 1
 
-						countShots++
+						countShotsUser++
 
 						if (field[user_coordinat_X][user_coordinat_Y] === 1) {
 							field[user_coordinat_X][user_coordinat_Y] = 2
