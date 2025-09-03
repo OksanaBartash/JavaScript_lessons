@@ -84,7 +84,7 @@
 					// 1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
 
 					//const elemGreaterThan1000 = arrayPricesValuablePapers.filter((price) => price > 1000)
-					//document.write(arrayGreaterThan1000.join(', '))
+					//document.write(elemGreaterThan1000.join(', '))
 
 
 					//============================
@@ -96,8 +96,15 @@
 					//	indexGreaterThan1000.push(ind)
 					//})
 					// document.write(indexGreaterThan1000.join(', '))
+
 					//--- 2 ---
-					//const indexGreaterThan1000 = arrayPricesValuablePapers.reduce((prevPrice, elem) => (elem > 1000 ? prevPrice + elem : prevPrice))
+					//const indexGreaterThan1000 =  arrayPricesValuablePapers.reduce(
+					//	(arr, elem, ind) => {
+					//		if (elem > 1000)
+					//			arr.push(ind)
+					//		return arr
+					//	}, []
+					//)
 
 					//document.write(indexGreaterThan1000)
 
@@ -106,17 +113,10 @@
 					// 3) Сформувати список з тих цін, які більші за попереднє значення
 					//---1---
 					//const greaterThanPrevious = arrayPricesValuablePapers.filter(
-					//	(price, index, array) => price > 0 && price > array[index - 1]
+					//	(price, index, array) => price > 0 && index > 0 && price > array[index - 1]
 					//)
 
 					//document.write(greaterThanPrevious.join(', '))
-
-					//---2---
-					//arrayPricesValuablePapers = arrayPricesValuablePapers.sort((a, b) => a-b)
-					//const firstIndex = arrayPricesValuablePapers.indexOf(0)
-					//arrayPricesValuablePapers.splice(firstIndex, 1)
-
-					//document.write(arrayPricesValuablePapers.join(', '))
 
 
 					//============================
@@ -169,12 +169,21 @@
 					//============================
 					// 8)Підрахувати кількість цін, що більше за 1000
 
+					//--- 1 ---
 					//let quantityPricesMore1000 = 0
 
 					//for (let i = 0; i < arrayPricesValuablePapers.length; i++) {
 					//	quantityPricesMore1000 = arrayPricesValuablePapers.filter((price) => price > 1000)
 					//}
 					//document.write(` <br> кількість цін, що більше за 1000: ${quantityPricesMore1000.length} <br>`)
+
+
+					//--- 2 ----
+					//let quantityPricesMore1000 = arrayPricesValuablePapers.reduce(
+					//	(count, element) => element > 1000 ? count + 1 : count, 
+					//	0)
+					
+					//document.write(` <br> кількість цін, що більше за 1000: ${quantityPricesMore1000} <br>`)
 
 
 					//============================

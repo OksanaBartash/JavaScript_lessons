@@ -16,7 +16,8 @@
 				<h1 class="page-title">Задача #7</h1>
 				<div class="page-item">
 					<p>
-						Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+						Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30%
+						знижки.
 					</p>
 				</div>
 			</div>
@@ -25,13 +26,26 @@
 				if (confirm('Почати тестування?')) {
 					document.write(`<h2 class="page-subtitle subtitle"> Роз'язок задічі: <h2>`)
 
-					const pricesArray = [65, 80, 1500, 64, 2100, 98, 4900]
+					// --- #1 ---
+					//const pricesArray = [65, 80, 1500, 64, 2100, 98, 4900]
 
-					let goodsMore1000giveDiscont30 = pricesArray.map((price) => (price > 1000 ? price * 0.7 : price))
+					//let goodsMore1000giveDiscont30 = pricesArray.map((price) => (price > 1000 ? price * 0.7 : price))
+
+					//document.write(pricesArray.join(", "));
+					//document.write(`<br>`)
+					//document.write(goodsMore1000giveDiscont30.join(", "));
+
+
+					//--- #2 ---
+					const pricesArray = [65, 80, 1500, 64, 2100, 98, 4900]
+					document.write(pricesArray.join(", "));
+					document.write(`<br><br>`)
+
+					pricesArray.forEach((price, index, arr) => {
+						if (price > 1000) arr[index] = price * 0.7
+					})
 
 					document.write(pricesArray.join(", "));
-					document.write(`<br>`)
-					document.write(goodsMore1000giveDiscont30.join(", "));
 				}
 
 			</script>
