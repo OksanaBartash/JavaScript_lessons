@@ -15,3 +15,5 @@ Lesson #9: https://oksanabartash.github.io/JavaScript_lessons/lesson_9/index.htm
 Lesson #10: https://oksanabartash.github.io/JavaScript_lessons/lesson_10/index.html
 
 Lesson #11: https://oksanabartash.github.io/JavaScript_lessons/lesson_11/index.html
+
+Lesson #12: https://oksanabartash.github.io/JavaScript_lessons/lesson_12/index.html
