@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6", /* Цільова версія JavaScript: 'es5', 'es6', 'es2015', 'esnext' тощо. */
+    "module": "commonjs", /* Система модулів: 'commonjs', 'amd', 'es2015', 'esnext' тощо. */
+    "strict": true, /* Увімкнення всіх строгих перевірок типів. */
+    "esModuleInterop": true, /*Увімкнення підтримки взаємодії з ES-модулями. */
+    "forceConsistentCasingInFileNames": true, /* Заборонити файли з різною регістровою назвою в одній директорії. */
+    "skipLibCheck": true, /*  Пропуск перевірки типів у файлах з бібліотеками.  */
+    "rootDir": "./src/js", /* Де зберігаються TypeScript файли */
+    "outDir": "./dist/js" /* Куди компілювати JavaScript */
+  },
+  "include": [
+    "src/js/**/*"
+  ], /* Брати всі файли з папки src/js */
+  "exclude": [
+    "node_modules",
+    "dist" /* Виключити папку з готовими файлами */
+  ]
+}
